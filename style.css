@@ -1,0 +1,274 @@
+*, :before, :after {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #bddfe4; /* For browsers that do not support gradients */
+    background-image: linear-gradient(#bddfe4, #52527a);
+    height: 2000px;
+}
+
+body, button {
+    font: 20px Garamond;
+}
+
+button {
+    cursor: pointer
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;   
+}
+
+#wrapper > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 0 20px;
+}
+
+#wrapper > header > button {
+    background-color: black;
+    border-width: 0;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 15px;
+    width: auto;
+}
+
+[name="calendar-current-month"] {
+    flex: 1
+}
+
+
+button > i {
+    padding-right: 10px
+}
+
+#wrapper > header + section {
+    background-color: #84838d;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+#wrapper > header + section aside {
+    padding: 0 20px 0 0;
+    width: 30%;
+}
+
+#wrapper > header + section > main {
+    background-color: white;
+    padding: 20px;
+    width: 75%;
+}
+
+aside > div {
+    background-color: #fff;
+    padding: 20px;
+}
+
+aside > div + div {
+    margin-top: 20px;
+}
+
+#calendar-wrapper {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    
+}
+#month-text{
+    text-align: center;
+}
+
+#event-box{
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: 2px solid #1f5b6d;
+    padding: 20px; 
+    width: auto;
+    height: 100px;  
+    
+}
+
+#calendar-wrapper section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    
+}
+
+#calendar-wrapper section > div {
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    width: calc(100% / 7);
+}
+#calendar-wrapper section > div:nth-child(-1n + 7) {
+    font-weight: bold;
+    cursor: default;
+   
+}
+#calendar-wrapper section > div:nth-child(1n + 8):not(.dim) {
+    cursor: pointer;
+}
+#calendar-wrapper section > div:nth-child(1n + 8):not(.dim):hover {
+    background-color: rgb(164, 226, 235);
+}
+#calendar-wrapper section > div.dim {
+    color: gray;
+    cursor: default;
+
+}
+#calendar-wrapper section > div.activeDay {
+    background-color: rgb(17, 68, 163);
+}
+#calendar-wrapper section > div.hasEvents:after {
+    border: 2px solid blue;
+    border-radius: 2px;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+
+#calendar-wrapper header {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#calendar-wrapper header button {
+    background-color: transparent;
+    color:#15526e;
+    border: 1 px solid blue;
+    margin: 0 10px;
+    margin-bottom: 5px;
+    
+ 
+}
+
+#calendar-wrapper .date-selected {
+    color: blue;
+    background-color: rgb(231, 231, 231);
+    
+}
+
+#app-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: rgba(0,0,0,0.6);
+}
+
+#app-modal > div {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(127, 171, 236);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+}
+
+#app-modal form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+}
+
+#app-modal label:first-of-type {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#app-modal label {
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+#app-modal input,
+#app-modal textarea,
+#app-modal select {
+    padding: 6px;
+
+}
+
+#app-modal .actions {
+    align-content: space-between;
+    display: flex;
+    gap: 5px;
+    margin: 15px 0 0
+}
+#app-modal .actions button {
+    flex: 1
+}
+
+.category-wrapper{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.box{
+    /* display: inline-block; */
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-right: 5px;
+}
+.blue {
+    background: #13b4ff;
+    margin-bottom: 5px;
+}
+.event-component-appointments {
+    background-color: #13b4ff;
+}
+  
+.purple {
+    background: #ab3fdd;
+    margin-bottom: 5px;
+}
+.event-component-meetings {
+    background-color: #ab3fdd;
+}
+  
+.wine {
+    background: #ae163e;
+    margin-bottom: 5px;
+}
+.event-component-courses {
+    background-color: #ae163e;
+}
+
+.yellow{
+    background: rgb(255, 255, 2);
+    margin-bottom: 5px;
+}
+.event-component-birthdays {
+    background-color: rgb(255, 255, 2);
+}
+
+#section {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width: 300px;
+    height: 150px;  
+}
+
+ .main {
+     display: flex;
+ }
